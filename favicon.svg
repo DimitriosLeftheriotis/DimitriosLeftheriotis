@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DL">
+  <style>
+    .background { fill: #111a24; }
+    .letters { fill: #f5f7fa; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #75b4f7; }
+      .letters { fill: #08131f; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="14" />
+  <text class="letters" x="32" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700">DL</text>
+</svg>

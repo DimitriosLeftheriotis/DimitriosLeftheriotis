@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dimitrios Leftheriotis">
+  <meta name="description" content="Portfolio of Dimitrios Leftheriotis, an Informatics undergraduate and researcher focused on applied AI, computational modelling, and efficient software systems.">
+  <meta name="theme-color" content="#f7f8fa">
+
+  <meta property="og:title" content="Dimitrios Leftheriotis — Portfolio">
+  <meta property="og:description" content="Informatics undergraduate and researcher specializing in applied AI and computational modelling.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <title>Dimitrios Leftheriotis — Portfolio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (() => {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      let resolvedTheme = systemTheme;
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') resolvedTheme = savedTheme;
+      } catch {
+        // System preference remains the fallback when storage is unavailable.
+      }
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.querySelector('meta[name="theme-color"]').content = resolvedTheme === 'dark' ? '#0c131b' : '#f7f8fa';
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="#home" aria-label="Dimitrios Leftheriotis — home">
+        <span class="brand-mark" aria-hidden="true">DL</span>
+        <span class="brand-name">Dimitrios Leftheriotis</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list" id="primary-navigation">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#resume">Résumé</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false">
+          <span class="sr-only">Dark mode</span>
+          <span class="theme-icon" data-theme-icon="sun" aria-hidden="true">☀</span>
+          <span class="theme-icon" data-theme-icon="moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+          <span class="nav-toggle-line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Undergraduate Student/Researcher</p>
+          <h1 id="hero-title">Building thoughtful systems at the intersection of <span>AI and computation.</span></h1>
+          <p class="hero-lead">I’m Dimitrios Leftheriotis, an undergraduate at Ionian University specializing in Applied AI &amp; Computational Modelling.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="Biography.pdf" download="Dimitrios-Leftheriotis-Biography.pdf">Download résumé</a>
+          </div>
+          <ul class="hero-meta" aria-label="Profile details">
+            <li>Corfu, Greece</li>
+            <li>Department of Informatics</li>
+          </ul>
+        </div>
+
+        <aside class="hero-card" aria-label="Research focus" data-reveal>
+          <div class="profile-photo-frame">
+            <img class="profile-photo" src="profile_pic.jpg" alt="Portrait of Dimitrios Leftheriotis" width="1728" height="2304" decoding="async" fetchpriority="high">
+          </div>
+          <div>
+            <p class="card-label">Current focus</p>
+            <p class="focus-statement">Efficient, measurable, and locally capable AI systems.</p>
+          </div>
+          <ul class="focus-list">
+            <li><span>01</span> Applied machine learning</li>
+            <li><span>02</span> Algorithm engineering</li>
+            <li><span>03</span> Computational modelling</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="about" aria-labelledby="about-title">
+      <div class="container split-layout">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Research-minded.<br>Systems-focused.</h2>
+        </div>
+        <div class="prose" data-reveal>
+          <p class="lead-copy">I’m an Informatics undergraduate at <strong>Ionian University</strong> with strong foundations in algorithm engineering, computational complexity, and applied machine learning.</p>
+          <p>My work explores the empirical evaluation, efficiency, and sustainability of AI-assisted code generation. Alongside research, I have practical experience with local AI systems, athletic technology applications, drone engineering and data science.</p>
+          <dl class="profile-facts">
+            <div>
+              <dt>Based in</dt>
+              <dd>Corfu, Greece</dd>
+            </div>
+            <div>
+              <dt>Discipline</dt>
+              <dd>Informatics</dd>
+            </div>
+            <div>
+              <dt>Direction</dt>
+              <dd>Applied AI research</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading section-heading-row" data-reveal>
+          <div>
+            <p class="eyebrow">Technical competencies</p>
+            <h2 id="skills-title">Tools for research and engineering.</h2>
+          </div>
+          <p>From high-level experimentation to systems and hardware.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card" data-reveal>
+            <p class="card-number">01</p>
+            <h3>Programming &amp; systems</h3>
+            <ul class="tag-list" aria-label="Programming and systems skills">
+              <li>Python</li><li>Java</li><li>C</li><li>C++</li><li>TypeScript</li><li>JavaScript</li><li>HTML</li><li>XML</li><li>SQL</li><li>Bash</li><li>PowerShell</li><li>Linux</li><li>Git / GitHub</li><li>Docker</li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <p class="card-number">02</p>
+            <h3>Machine learning &amp; AI</h3>
+            <ul class="tag-list" aria-label="Machine learning and AI skills">
+              <li>NumPy</li><li>Pandas</li><li>Scikit-Learn</li><li>Ollama</li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <p class="card-number">03</p>
+            <h3>Profiling &amp; scientific computing</h3>
+            <ul class="tag-list" aria-label="Profiling and scientific computing skills">
+              <li>CodeCarbon</li><li>Matplotlib</li><li>Seaborn</li><li>Statistical profiling</li>
+            </ul>
+          </article>
+
+          <article class="skill-card" data-reveal>
+            <p class="card-number">04</p>
+            <h3>Hardware &amp; embedded</h3>
+            <ul class="tag-list" aria-label="Hardware and embedded skills">
+              <li>Telemetry calibration</li><li>Arduino</li><li>ESP32</li><li>Drone flight controllers</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading section-heading-row" data-reveal>
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="projects-title">Research &amp; engineering projects.</h2>
+          </div>
+          <p>Detailed case studies and repository links will be added as they become available.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-reveal>
+            <p class="project-index">01</p>
+            <div><h3>Empirical Energy &amp; Computational Complexity Benchmarking of AI Code</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="project-card" data-reveal>
+            <p class="project-index">02</p>
+            <div><h3>Interactive Graph Traversal &amp; Pathfinding Visualizer</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="project-card" data-reveal>
+            <p class="project-index">03</p>
+            <div><h3>LocalWhisperFlow: Offline Speech Processing Engine</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="project-card" data-reveal>
+            <p class="project-index">04</p>
+            <div><h3>Athletic Training Periodization &amp; Monitoring System</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="project-card" data-reveal>
+            <p class="project-index">05</p>
+            <div><h3>Autonomous Agent Harnesses &amp; Knowledge Automation Suite</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="project-card" data-reveal>
+            <p class="project-index">06</p>
+            <div><h3>Order Automation &amp; Data Extraction Pipeline</h3><p>Details coming soon.</p></div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container split-layout">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title">Research through practice.</h2>
+        </div>
+        <div class="timeline" data-reveal>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <p class="timeline-label">Research direction</p>
+            <h3>Empirical AI evaluation</h3>
+            <p>Investigating the computational efficiency and sustainability of AI code generation through empirical evaluation and statistical profiling.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <p class="timeline-label">Applied engineering</p>
+            <h3>Local systems &amp; physical computing</h3>
+            <p>Developing practical experience across local AI systems, athletic technology applications, telemetry, and drone engineering.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <p class="timeline-label">Academic collaboration</p>
+            <h3>Departmental research initiatives</h3>
+            <p>Collaborating within research initiatives connected to the Department of Informatics, including CMOD Lab and ISDLAB.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="education-card" data-reveal>
+          <div class="education-year">2024 <span>– Present</span></div>
+          <div class="education-copy">
+            <p class="eyebrow">Education</p>
+            <h2 id="education-title">B.Sc. in Informatics <span>(Candidate)</span></h2>
+            <p class="institution">Ionian University · Department of Informatics · Corfu, Greece</p>
+            <p>Core focus on Algorithms &amp; Data Structures, Machine Learning, Computational Modeling, Scientific Computing, and Systems Architecture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resume" aria-labelledby="resume-title">
+      <div class="container resume-panel" data-reveal>
+        <div>
+          <p class="eyebrow">Profile document</p>
+          <h2 id="resume-title">A concise view of my academic journey.</h2>
+          <p>Download the current biography and portfolio profile as a PDF.</p>
+        </div>
+        <a class="button button-primary" href="Biography.pdf" download="Dimitrios-Leftheriotis-Biography.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let’s discuss research, systems, and new ideas.</h2>
+        </div>
+        <div class="contact-grid" data-reveal>
+          <a class="contact-link" href="mailto:inf2024104@ionio.gr">
+            <span>Academic email</span>
+            <strong>inf2024104@ionio.gr</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-link" href="mailto:dimitriosleft@gmail.com">
+            <span>Personal email</span>
+            <strong>dimitriosleft@gmail.com</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-link" href="https://github.com/DimitriosLeftheriotis" target="_blank" rel="noopener noreferrer">
+            <span>Code &amp; projects</span>
+            <strong>GitHub</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/dimitris-leftheriotis-4b0362347/" target="_blank" rel="noopener noreferrer">
+            <span>Professional profile</span>
+            <strong>LinkedIn</strong>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-current-year>2026</span> Dimitrios Leftheriotis</p>
+      <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</body>
+</html>
