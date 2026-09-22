@@ -43,7 +43,7 @@ All local file references are relative, so the site works for both account sites
 
 ## Update content
 
-Most content is plain text in `index.html`. To complete a project card, find its title in the `#projects` section and replace `Details coming soon.` with a verified description. Add project links only when their final URLs are available.
+Most content is plain text in `index.html`. To add another completed project, copy the existing `.project-card`, give it the next sequential index, and replace its title, verified description, technology tags, repository URL, and accessible link label. Only publish details and links that are ready.
 
 When replacing the downloadable document, either retain the filename `Biography.pdf` or update both PDF links in `index.html`. Run the tests after changing filenames, navigation targets, or contact links.
 

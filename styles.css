@@ -152,9 +152,15 @@ html[data-theme="dark"] [data-theme-icon="moon"] { opacity: 1; transform: rotate
 .project-card { display: grid; min-height: 10rem; align-items: center; gap: 2rem; padding: 2rem .5rem; border-bottom: 1px solid rgb(255 255 255 / 17%); grid-template-columns: 3rem minmax(0,1fr) auto; transition: all var(--transition); }
 .project-card:hover { padding-inline: 1.25rem; background: rgb(255 255 255 / 3.5%); }
 .project-index { margin: 0; color: #82b6ef; }
-.project-card h3 { max-width: 38rem; margin-bottom: .55rem; font-size: clamp(1.15rem,2.4vw,1.65rem); }
-.project-card p:not(.project-index) { margin: 0; font-size: .88rem; }
-.project-arrow { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid rgb(255 255 255 / 22%); border-radius: 50%; color: #82b6ef; }
+.project-content { display: grid; gap: .9rem; }
+.project-card h3 { max-width: 38rem; margin-bottom: 0; font-size: clamp(1.15rem,2.4vw,1.65rem); }
+.project-card h3 a { text-decoration-color: transparent; text-decoration-line: underline; text-decoration-thickness: .08em; text-underline-offset: .18em; transition: color var(--transition), text-decoration-color var(--transition); }
+.project-card h3 a:hover { color: #a8d1ff; text-decoration-color: currentColor; }
+.project-card p:not(.project-index) { max-width: 53rem; margin: 0; font-size: .88rem; }
+.project-tech { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; margin: .15rem 0 0; list-style: none; }
+.project-tech li { padding: .32rem .6rem; border: 1px solid rgb(255 255 255 / 22%); border-radius: 999px; color: #d4dee8; font-size: .72rem; line-height: 1.2; }
+.project-arrow { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid rgb(255 255 255 / 22%); border-radius: 50%; color: #82b6ef; transition: color var(--transition), background var(--transition), border-color var(--transition), transform var(--transition); }
+.project-arrow:hover { transform: translateY(-2px); border-color: #82b6ef; background: rgb(130 182 239 / 12%); color: #a8d1ff; }
 
 .timeline { position: relative; display: grid; }
 .timeline::before { position: absolute; top: .35rem; bottom: .4rem; left: .35rem; width: 1px; background: var(--color-border); content: ""; }

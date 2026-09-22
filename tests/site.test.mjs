@@ -30,12 +30,8 @@ const sectionIds = [
 ];
 
 const projects = [
-  'Empirical Energy & Computational Complexity Benchmarking of AI Code',
-  'Interactive Graph Traversal & Pathfinding Visualizer',
-  'LocalWhisperFlow: Offline Speech Processing Engine',
-  'Athletic Training Periodization & Monitoring System',
-  'Autonomous Agent Harnesses & Knowledge Automation Suite',
-  'Order Automation & Data Extraction Pipeline',
+  'Agentic Harness with Ollama',
+  'Annual Training Plan',
 ];
 
 test('all deployment files exist', () => {
@@ -90,13 +86,40 @@ test('biography content is source-backed and cleaned for the web', () => {
   assert.doesNotMatch(html, /\[\[/);
 });
 
-test('all verified project titles are represented without invented details', () => {
+test('completed projects are represented with verified details and source links', () => {
   const html = read('index.html');
-  const decodedHtml = html.replaceAll('&amp;', '&');
   for (const project of projects) {
-    assert.ok(decodedHtml.includes(project), `missing project: ${project}`);
+    assert.ok(html.includes(project), `missing project: ${project}`);
   }
-  assert.equal((html.match(/Details coming soon\./g) ?? []).length, projects.length);
+
+  assert.equal((html.match(/class="project-card"/g) ?? []).length, projects.length);
+  assert.doesNotMatch(html, /Details coming soon\./i);
+  assert.match(html, /coach-provided annual training data/i);
+  assert.match(html, /transparent AI coding agent harness/i);
+
+  const expectedTechnologies = [
+    'Python', 'Flask', 'Matplotlib', 'NumPy', 'HTML', 'JavaScript',
+    'Ollama', 'Local LLMs', 'Tool Calling', 'CLI', 'Sandboxing',
+  ];
+  for (const technology of expectedTechnologies) {
+    assert.match(html, new RegExp(`<li>${technology}</li>`, 'i'), `missing project technology: ${technology}`);
+  }
+
+  const repositories = [
+    {
+      url: 'https://github.com/DimitriosLeftheriotis/Agentic-Harness-with-Ollama',
+      ariaLabel: 'View Agentic Harness with Ollama source code on GitHub',
+    },
+    {
+      url: 'https://github.com/DimitriosLeftheriotis/Annual-Training-Plan',
+      ariaLabel: 'View Annual Training Plan source code on GitHub',
+    },
+  ];
+
+  for (const repo of repositories) {
+    assert.ok((html.match(new RegExp(`href="${repo.url}"`, 'g')) ?? []).length >= 2, `missing links for ${repo.url}`);
+    assert.match(html, new RegExp(`aria-label="${repo.ariaLabel}"`, 'i'));
+  }
 });
 
 test('resume and contact destinations are correct', () => {
