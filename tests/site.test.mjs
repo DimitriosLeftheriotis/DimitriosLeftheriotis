@@ -31,6 +31,7 @@ const sectionIds = [
 
 const projects = [
   'Agentic Harness with Ollama',
+  'Pathfinding Visualizer',
   'Annual Training Plan',
 ];
 
@@ -67,10 +68,9 @@ test('document uses semantic landmarks and a single primary heading', () => {
 });
 
 test('all portfolio sections and navigation destinations exist', () => {
-  const html = read('index.html');
   for (const id of sectionIds) {
-    assert.match(html, new RegExp(`<section[^>]+id="${id}"`, 'i'), `missing #${id}`);
-    assert.match(html, new RegExp(`href="#${id}"`, 'i'), `missing link to #${id}`);
+    assert.match(read('index.html'), new RegExp(`<section[^>]+id="${id}"`, 'i'), `missing #${id}`);
+    assert.match(read('index.html'), new RegExp(`href="#${id}"`, 'i'), `missing link to #${id}`);
   }
 });
 
@@ -96,19 +96,26 @@ test('completed projects are represented with verified details and source links'
   assert.doesNotMatch(html, /Details coming soon\./i);
   assert.match(html, /coach-provided annual training data/i);
   assert.match(html, /transparent AI coding agent harness/i);
+  assert.match(html, /interactive 2D grid pathfinding visualizer/i);
 
   const expectedTechnologies = [
     'Python', 'Flask', 'Matplotlib', 'NumPy', 'HTML', 'JavaScript',
     'Ollama', 'Local LLMs', 'Tool Calling', 'CLI', 'Sandboxing',
+    'Pygame', 'A* Search', 'Dijkstra', 'BFS &amp; DFS', 'Graph Algorithms',
   ];
   for (const technology of expectedTechnologies) {
-    assert.match(html, new RegExp(`<li>${technology}</li>`, 'i'), `missing project technology: ${technology}`);
+    const escaped = technology.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+    assert.match(html, new RegExp(`<li>${escaped}</li>`, 'i'), `missing project technology: ${technology}`);
   }
 
   const repositories = [
     {
       url: 'https://github.com/DimitriosLeftheriotis/Agentic-Harness-with-Ollama',
       ariaLabel: 'View Agentic Harness with Ollama source code on GitHub',
+    },
+    {
+      url: 'https://github.com/DimitriosLeftheriotis/Pathfinding-Visualizer',
+      ariaLabel: 'View Pathfinding Visualizer source code on GitHub',
     },
     {
       url: 'https://github.com/DimitriosLeftheriotis/Annual-Training-Plan',
